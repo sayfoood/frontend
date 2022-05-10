@@ -14,27 +14,27 @@ Widget dropdownButton(String? dropdownValue, List<String> string, String hint,){
     case "Program":
       programdropdownValue = dropdownValue!;      
       break;
-    case "School":
-      schooldropdownValue = dropdownValue!;      
+    case "Campus":
+      campusdropdownValue = dropdownValue!;      
       break;
-    case "Branch":
-      branchdropdownValue = dropdownValue!;      
-      break;
-    case "Year":
-      yeardropdownValue = dropdownValue!;      
-      break;
-    case "Semester":
-      semesterdropdownValue = dropdownValue!;      
-      break;
-    case "Batch":
-      batchdropdownValue = dropdownValue!;      
-      break;
-    case "Subject":
-      subjectdropdownValue = dropdownValue!;      
-      break;
-    case "Faculty":
-      facultiesdropdownValue = dropdownValue!;      
-      break;
+    // case "Branch":
+    //   branchdropdownValue = dropdownValue!;      
+    //   break;
+    // case "Year":
+    //   yeardropdownValue = dropdownValue!;      
+    //   break;
+    // case "Semester":
+    //   semesterdropdownValue = dropdownValue!;      
+    //   break;
+    // case "Batch":
+    //   batchdropdownValue = dropdownValue!;      
+    //   break;
+    // case "Subject":
+    //   subjectdropdownValue = dropdownValue!;      
+    //   break;
+    // case "Faculty":
+    //   facultiesdropdownValue = dropdownValue!;      
+    //   break;
     default:
   }
   }
@@ -119,27 +119,27 @@ class _dropdownState extends State<dropdown> {
     case "Program":
       programdropdownValue = dropdownValue;      
       break;
-    case "School":
-      schooldropdownValue = dropdownValue;      
+    case "Campus":
+      campusdropdownValue = dropdownValue;      
       break;
-    case "Branch":
-      branchdropdownValue = dropdownValue;      
-      break;
-    case "Year":
-      yeardropdownValue = dropdownValue;      
-      break;
-    case "Semester":
-      semesterdropdownValue = dropdownValue;      
-      break;
-    case "Batch":
-      batchdropdownValue = dropdownValue;      
-      break;
-    case "Subject":
-      subjectdropdownValue = dropdownValue;      
-      break;
-    case "Faculty":
-      facultiesdropdownValue = dropdownValue;      
-      break;
+    // case "Branch":
+    //   branchdropdownValue = dropdownValue;      
+    //   break;
+    // case "Year":
+    //   yeardropdownValue = dropdownValue;      
+    //   break;
+    // case "Semester":
+    //   semesterdropdownValue = dropdownValue;      
+    //   break;
+    // case "Batch":
+    //   batchdropdownValue = dropdownValue;      
+    //   break;
+    // // case "Subject":
+    // //   subjectdropdownValue = dropdownValue;      
+    // //   break;
+    // case "Faculty":
+    //   facultiesdropdownValue = dropdownValue;      
+    //   break;
     default:
   }
   }

@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 
-List<String> Program = ["B.Tech", "MBA", "BBA", "B.Com"];
-List<String> School = [
-  "SCSIT",
-  "SAME",
+List<String> hostelName = ["Sai Hostel", "Satya Hostel", "S.C Bose Hostel", "Gautam Hostel"];
+List<String> campusName = [
+  "GEU",
+  "GEHU",
 ];
-// List<String> Year = ["2021", "2022"];
+List<String> Year = ["2021", "2022"];
+List<String> Program = [
+  "BTech",
+  "BCA",
+  "BSci",
+  "BA",
+];
 List<String> Semester = [
   "1",
   "2",
@@ -33,14 +39,14 @@ List<String> Subject = [
   "Machine Learning"
   ];
 List<String> Students = [
-  "Aardhya",
-  "Aashiv",
-  "Aayush",
-  "Abhinay",
+  "Piyush",
+  "Kanishk",
+  "Nahar",
+  "Paritosh",
+  "Tanmay",
+  "Jyoti",
   "Aditya",
-  "Ashish Kumar Singh Sengar",
-  "Akshat",
-  "Alabhya",
+  "Peeyush",
   "Anand",
   "Anirudh",
   "Archana ",
@@ -80,48 +86,49 @@ List<String> CollegeYear = [
   "1st",
   "2nd",
   "3rd",
+  "4th"
 ];
 List<String> Enrollment = [
-  "2019btcs001",
-  "2019btcs002",
-  "2019btcs003",
-  "2019btcs004",
-  "2019btcs005",
-  "2019btcs006",
-  "2019btcs007",
-  "2019btcs008",
-  "2019btcs009",
-  "2019btcs010",
-  "2019btcs011",
-  "2019btcs012",
-  "2019btcs013",
-  "2019btcs014",
-  "2019btcs015",
-  "2019btcs016",
-  "2019btcs017",
-  "2019btcs018",
-  "2019btcs019"
+  "GE182013412",
+  "GE182013420",
+  "GE182013420",
+  "GE182013420",
+  "GE182013420",
+  "GE182013420",
+  "GE182013420",
+  "GE182013420",
+  "GE182013420",
+  "GE182013420",
+  "GE182013420",
+  "GE182013420",
+  "GE182013420",
+  "GE182013420",
+  "GE182013420",
+  "GE182013420",
+  "GE182013420",
+  "GE182013420",
+  "GE182013420"
 ];
 List<String> StudentEmail = [
-  "2019btcs001@student.suas.ac.in",
-  "2019btcs002@student.suas.ac.in",
-  "2019btcs003@student.suas.ac.in",
-  "2019btcs004@student.suas.ac.in",
-  "2019btcs005@student.suas.ac.in",
-  "2019btcs006@student.suas.ac.in",
-  "2019btcs007@student.suas.ac.in",
-  "2019btcs008@student.suas.ac.in",
-  "2019btcs009@student.suas.ac.in",
-  "2019btcs010@student.suas.ac.in",
-  "2019btcs011@student.suas.ac.in",
-  "2019btcs012@student.suas.ac.in",
-  "2019btcs013@student.suas.ac.in",
-  "2019btcs014@student.suas.ac.in",
-  "2019btcs015@student.suas.ac.in",
-  "2019btcs016@student.suas.ac.in",
-  "2019btcs017@student.suas.ac.in",
-  "2019btcs018@student.suas.ac.in",
-  "2019btcs019@student.suas.ac.in"
+  "piyush@geu.ac.in",
+  "student@geu.ac.in",
+  "student@geu.ac.in",
+  "student@geu.ac.in",
+  "student@geu.ac.in",
+  "student@geu.ac.in",
+  "student@geu.ac.in",
+  "student@geu.ac.in",
+  "student@geu.ac.in",
+  "student@geu.ac.in",
+  "student@geu.ac.in",
+  "student@geu.ac.in",
+  "student@geu.ac.in",
+  "student@geu.ac.in",
+  "student@geu.ac.in",
+  "student@geu.ac.in",
+  "student@geu.ac.in",
+  "student@geu.ac.in",
+  "student@geu.ac.in"
 ];
 List<String> FacultyDOB = [
   "11/11/99"
@@ -132,7 +139,7 @@ List<String> FacultiesID = [
 List<String> FacultiesEmailID = [
   "Facultybtcs001@suas.ac.in",
 ];
-List<String> PhoneNo = ["9878768767"];
+List<String> PhoneNo = ["9192939495"];
 List<bool> StudentisActive = [
   true,
   true,
@@ -229,21 +236,22 @@ List attendencecolor = [
   Colors.white,
 ];
   //  0, /*Absent*/    1, /*Present*/    2 /*Absent*/
-    String semesterdropdownValue = Semester[0];
-    String batchdropdownValue = Batch[0];
-    String schooldropdownValue = School[0];
-    String subjectdropdownValue = Subject[0];
-    String yeardropdownValue = CollegeYear[0];
+    // String semesterdropdownValue = Semester[0];
+    // String batchdropdownValue = Batch[0];
+    String campusdropdownValue = campusName[0];
     String programdropdownValue = Program[0];
-    String branchdropdownValue = Branch[0];
+    // String subjectdropdownValue = Subject[0];
+    // String yeardropdownValue = CollegeYear[0];
+    String hosteldropdownValue = hostelName[0];
+    // String branchdropdownValue = Branch[0];
     String facultiesdropdownValue = Faculties[0];   
-    Map<String,String> values = {
-      programdropdownValue:"MBA",
-      semesterdropdownValue:"1",
-      batchdropdownValue:"B1",
-      schooldropdownValue:"SCSIT",
-      subjectdropdownValue:"Artificial Intelegence",
-      yeardropdownValue:"3rd",
-      branchdropdownValue:"Mecha",
-      facultiesdropdownValue:"Neha Gupta",
-    };
+    // Map<String,String> values = {
+    //   programdropdownValue:"MBA",
+    //   semesterdropdownValue:"1",
+    //   batchdropdownValue:"B1",
+    //   schooldropdownValue:"SCSIT",
+    //   subjectdropdownValue:"Artificial Intelegence",
+    //   yeardropdownValue:"3rd",
+    //   branchdropdownValue:"Mecha",
+    //   facultiesdropdownValue:"Neha Gupta",
+    // };

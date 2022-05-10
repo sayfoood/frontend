@@ -20,7 +20,7 @@ class _FacultyPageState extends State<FacultyPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Faculty"),
+        title: Text("Student"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),

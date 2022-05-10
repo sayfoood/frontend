@@ -94,13 +94,13 @@ class _FacultyDetailsPageState extends State<FacultyDetailsPage> {
                             ),
                           ),
 //?????????????????????????????????????????????????????????????????????????????????????????????????                       
-                          Expanded(
-                            child: Text(
-                              "Sem : " + Semester[0],
-                              style:
-                                  TextStyle(color: Colors.grey, fontSize: 17.0),
-                            ),
-                          ),
+                          // Expanded(
+                          //   child: Text(
+                          //     "Sem : " + Semester[0],
+                          //     style:
+                          //         TextStyle(color: Colors.grey, fontSize: 17.0),
+                          //   ),
+                          // ),
                         ],
                       ),
                       Text(

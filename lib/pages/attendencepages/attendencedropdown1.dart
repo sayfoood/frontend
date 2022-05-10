@@ -26,12 +26,12 @@ class _AttendenceDropdownPage1State extends State<AttendenceDropdownPage1> {
           physics: BouncingScrollPhysics(),
           children: [
             Center(
-                  child: Image.asset('assets/Logo_Login_Page.png'),
+                  child: Image.asset('assets/LogoLoginPage.png'),
                 ),
                 const SizedBox(
                 height: 30,
               ),
-              Center(child: Text("Attendence Management System",style: TextStyle(fontSize: 17,fontWeight: FontWeight.w500,color: Colors.grey),)),
+              Center(child: Text("Mess Attendence Management System",style: TextStyle(fontSize: 17,fontWeight: FontWeight.w500,color: Colors.grey),)),
               const SizedBox(
                 height: 30,
               ),
@@ -39,10 +39,10 @@ class _AttendenceDropdownPage1State extends State<AttendenceDropdownPage1> {
                 padding: const EdgeInsets.all(10.0),
                       child: Column(
                         children: [SizedBox(height: 30,),
-                          dropdown(DropdownValue: programdropdownValue, Hint: "Program", sTring: Program ,),SizedBox(height: 20,),
-                          dropdown(DropdownValue: schooldropdownValue,Hint: "School",sTring: School),SizedBox(height: 20,),
-                          dropdown(DropdownValue: branchdropdownValue,sTring: Branch,Hint: "Branch"),SizedBox(height: 20,),
-                          dropdown(DropdownValue: yeardropdownValue,sTring: CollegeYear,Hint:"Year"),SizedBox(height: 20,),
+                          dropdown(DropdownValue: hosteldropdownValue, Hint: "Hostel", sTring: hostelName ,),SizedBox(height: 20,),
+                          dropdown(DropdownValue: campusdropdownValue,Hint: "Campus",sTring: campusName),SizedBox(height: 20,),
+                          // dropdown(DropdownValue: branchdropdownValue,sTring: Branch,Hint: "Branch"),SizedBox(height: 20,),
+                          // dropdown(DropdownValue: yeardropdownValue,sTring: CollegeYear,Hint:"Year"),SizedBox(height: 20,),
                           // dropdownButton(batchdropdownValue,Batch,"Batch"),
                           SizedBox(height: 35,),
                           ElevatedButton(

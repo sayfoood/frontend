@@ -22,7 +22,7 @@ class _AdminPageState extends State<AdminPage> {
 
   @override
   Widget build(BuildContext context) {
-    final user = UserPrefrences.myUser;
+    final user = UserPrefrences.student;
 
     return Scaffold(
       appBar: AppBar(
@@ -33,13 +33,13 @@ class _AdminPageState extends State<AdminPage> {
         child: ListView(
           children: [
             Center(
-              child: Image.asset('assets/Logo_Login_Page.png'),
+              child: Image.asset('assets/LogoLoginPage.png'),
             ),
             const SizedBox(
               height: 20,
             ),
             ProfileWidget(
-              imagePath: user.imagePath,
+              imagePath: 'assets/Profile_Photo.png',
               size: 224,
             ),
             const SizedBox(
@@ -57,10 +57,10 @@ class _AdminPageState extends State<AdminPage> {
             const SizedBox(
               height: 15,
             ),
-            Center(child: buildFacultyDetailsButton(user, context)),
-            const SizedBox(
-              height: 24,
-            ),
+            // Center(child: buildFacultyDetailsButton(user, context)),
+            // const SizedBox(
+            //   height: 24,
+            // ),
 
             // Container(
             //   color: Colors.grey[400],
@@ -108,9 +108,9 @@ class _AdminPageState extends State<AdminPage> {
   }
 }
 
-Widget buildSwitchToFacultyButton(Faculty user, BuildContext context) =>
+Widget buildSwitchToFacultyButton(Student user, BuildContext context) =>
     ButtonWidget(
-      text: 'Switch To Faculty',
+      text: 'Switch To Student',
       icon: Icons.switch_account,
       onClicked: () => {
         Navigator.of(context).pushReplacement(
@@ -118,7 +118,7 @@ Widget buildSwitchToFacultyButton(Faculty user, BuildContext context) =>
         )
       },
     );
-Widget buildStudentDetailsButton(Faculty user, BuildContext context) =>
+Widget buildStudentDetailsButton(Student user, BuildContext context) =>
     ButtonWidget(
       text: 'Student Details',
       icon: Icons.list_rounded,
@@ -128,7 +128,7 @@ Widget buildStudentDetailsButton(Faculty user, BuildContext context) =>
         )
       },
     );
-Widget buildFacultyDetailsButton(Faculty user, BuildContext context) =>
+Widget buildFacultyDetailsButton(Student user, BuildContext context) =>
     ButtonWidget(
       text: 'Faculty Details',
       icon: Icons.list_rounded,

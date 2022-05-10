@@ -1,6 +1,7 @@
 import 'package:attendence_management_system/pages/attendencepages/attendencePage.dart';
 import 'package:attendence_management_system/widgets/dropDownWidget.dart';
 import 'package:attendence_management_system/utils/names.dart';
+import 'package:attendence_management_system/utils/foodItems.dart';
 import 'package:flutter/material.dart';
 
 class AttendenceDropdownpage2 extends StatefulWidget {
@@ -59,26 +60,30 @@ class _AttendenceDropdownpage2State extends State<AttendenceDropdownpage2> {
               SizedBox(
                 height: 20,
               ),
-              dropdown( DropdownValue :semesterdropdownValue, sTring: Semester,Hint :"Semester"),
-              SizedBox(
-                height: 20,
-              ),
-              dropdown( DropdownValue :batchdropdownValue, sTring: Batch,Hint: "Batch"),
-              SizedBox(
-                height: 20,
-              ),
-              dropdown( DropdownValue :subjectdropdownValue, sTring:Subject,Hint: "Subject"),
-              SizedBox(
-                height: 30,
-              ),
+              // dropdown( DropdownValue :semesterdropdownValue, sTring: Semester,Hint :"Semester"),
+              // SizedBox(
+              //   height: 20,
+              // ),
+              // dropdown( DropdownValue :batchdropdownValue, sTring: Batch,Hint: "Batch"),
+              // SizedBox(
+              //   height: 20,
+              // ),
+              // dropdown( DropdownValue :subjectdropdownValue, sTring:Subject,Hint: "Subject"),
+              // SizedBox(
+              //   height: 30,
+              // ),
               // Text("${selectedDate.toLocal()}".split(' ')[0]),
                 // SizedBox(height: 20.0,),
                 // ignore: deprecated_member_use
-                RaisedButton(
-                  color: Colors.red,
-                  onPressed: () => _selectDate(context),
-                  child: Text('Select date',style: TextStyle(color: Colors.white),),
-                ),
+
+
+                // RaisedButton(
+                //   color: Colors.red,
+                //   onPressed: () => _selectDate(context),
+                //   child: Text('Select date',style: TextStyle(color: Colors.white),),
+                // ),
+
+                
               // Row(children: [
               //   SizedBox(
               //     width: 30,
@@ -235,8 +240,8 @@ class _AttendenceDropdownpage2State extends State<AttendenceDropdownpage2> {
                           padding: const EdgeInsets.all(8.0),
                           child: Row(
                             children: [
-                              Expanded(child: Text("Program : $programdropdownValue")),
-                              Expanded(child: Text("Branch : $branchdropdownValue")),
+                              // Expanded(child: Text("Program : $programdropdownValue")),
+                              // Expanded(child: Text("Branch : $branchdropdownValue")),
                             ],
                           ),
                         ),
@@ -244,8 +249,8 @@ class _AttendenceDropdownpage2State extends State<AttendenceDropdownpage2> {
                           padding: const EdgeInsets.all(8.0),
                           child: Row(
                             children: [
-                              Expanded(child: Text("Year : $yeardropdownValue")),
-                              Expanded(child: Text("Semester : $semesterdropdownValue"))
+                              // Expanded(child: Text("Year : $yeardropdownValue")),
+                              // Expanded(child: Text("Semester : $semesterdropdownValue"))
                             ],
                           ),
                         ),
@@ -253,8 +258,8 @@ class _AttendenceDropdownpage2State extends State<AttendenceDropdownpage2> {
                           padding: const EdgeInsets.all(8.0),
                           child: Row(
                             children: [
-                              Expanded(child: Text("Batch : $batchdropdownValue")),
-                              Expanded(child: Text("Subject : $subjectdropdownValue"))
+                              // Expanded(child: Text("Batch : $batchdropdownValue")),
+                              // Expanded(child: Text("Subject : $subjectdropdownValue"))
                             ],
                           ),
                         ),

@@ -149,36 +149,36 @@ class UserPrefrences{
     subject: "Subject Name",
   );  
   static var student = Student(
-    studentEnrollmentNo: "2019btcs002", 
-    studentName: "Abhinay", 
-    studentemail: "2019btcs002@@Student.com", 
-    semester: "V", 
+    studentEnrollmentNo: "18141212", 
+    studentName: "Piyush Mehta", 
+    studentemail: "piyush@geu.ac.in", 
+    semester: "VIII", 
     batch: "B1", 
-    branch: "C.S.I.T.", 
-    studingInYear: "3rd", 
-    program: "Btech"
+    branch: "C.S", 
+    studingInYear: "4th", 
+    program: "BTech"
     );  
   static List<Student> studentlist = [
     Student(
-    studentEnrollmentNo: "2019btcs002", 
-    studentName: "Abhinay", 
-    studentemail: "2019btcs002@@Student.com", 
-    semester: "V", 
+    studentEnrollmentNo: "18141212", 
+    studentName: "Piyush", 
+    studentemail: "piyush@geu.ac.in", 
+    semester: "VIII", 
     batch: "B1", 
-    branch: "C.S.I.T.", 
-    studingInYear: "3rd", 
-    program: "Btech"
+    branch: "CS", 
+    studingInYear: "4th", 
+    program: "BTech"
     ),
-    Student(
-    studentEnrollmentNo: Enrollment[0], 
-    studentName: Students[0], 
-    studentemail: StudentEmail[0], 
-    semester: Semester[4], 
-    batch: Batch[0], 
-    branch: Branch[0], 
-    studingInYear: CollegeYear[0], 
-    program: Program[0]
-    ),
+    // Student(
+    // studentEnrollmentNo: Enrollment[0], 
+    // studentName: Students[0], 
+    // studentemail: StudentEmail[0], 
+    // semester: Semester[4], 
+    // batch: Batch[0], 
+    // branch: Branch[0], 
+    // studingInYear: CollegeYear[0], 
+    // program: Program[0]
+    // ),
     Student(
     studentEnrollmentNo: Enrollment[1], 
     studentName: Students[1], 
@@ -269,5 +269,10 @@ class UserPrefrences{
     studingInYear: CollegeYear[0], 
     program: Program[0]
     ),
+  ];
+  static List<Meal> mealList = [
+    Meal(mealType: "breakfast"),
+    Meal(mealType: "lunch"),
+    Meal(mealType: "dinner"),
   ];
 }

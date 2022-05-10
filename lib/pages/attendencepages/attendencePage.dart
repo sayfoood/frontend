@@ -3,6 +3,7 @@
 import 'package:attendence_management_system/pages/bottomNavBar.dart';
 import 'package:attendence_management_system/theme/colors.dart';
 import 'package:attendence_management_system/utils/names.dart';
+import 'package:attendence_management_system/utils/foodItems.dart';
 import 'package:attendence_management_system/utils/userPrefrences.dart';
 import 'package:flutter/material.dart';
 import 'package:focused_menu/focused_menu.dart';
@@ -16,8 +17,8 @@ class AttendencePage extends StatefulWidget {
 }
 
 class _AttendencePageState extends State<AttendencePage> {
-    final studentvar = UserPrefrences.studentlist;
-
+  final studentvar = UserPrefrences.studentlist;
+  final mealvar = UserPrefrences.mealList[2];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +33,7 @@ class _AttendencePageState extends State<AttendencePage> {
           ),
           Center(
             child: Text(
-              "Select those who are present and \n     long press for more options",
+              "Select the items you're interested to take today",
               style: TextStyle(
                   fontSize: 15,
                   color: Colors.grey,
@@ -47,7 +48,7 @@ class _AttendencePageState extends State<AttendencePage> {
             width: 400,
             // color: Colors.orange,
             child: new ListView.builder(
-                itemCount: studentvar.length,
+                itemCount: mealvar.mealAvailable.length,
                 itemBuilder: (BuildContext context, int index) =>
                     buildAttendenceCard(context, index)),
             // ListTile(
@@ -60,7 +61,7 @@ class _AttendencePageState extends State<AttendencePage> {
           //
           //
           //
-          ElevatedButton(                      
+          ElevatedButton(
             onPressed: () => showDialog<String>(
               context: context,
               builder: (BuildContext context) => AlertDialog(
@@ -75,7 +76,9 @@ class _AttendencePageState extends State<AttendencePage> {
                     onPressed: () => {
                       ResetState(),
                       Navigator.of(context).pushAndRemoveUntil(
-          MaterialPageRoute(builder: (context) => LoginNavScreen()),(route)=>false)
+                          MaterialPageRoute(
+                              builder: (context) => LoginNavScreen()),
+                          (route) => false)
                     },
                     child: const Text('Submit'),
                   ),
@@ -83,9 +86,7 @@ class _AttendencePageState extends State<AttendencePage> {
               ),
             ),
             child: const Text('Submit'),
-                  style: ElevatedButton.styleFrom(
-                    fixedSize: Size(300,40)
-                  ),
+            style: ElevatedButton.styleFrom(fixedSize: Size(300, 40)),
           ),
           // ElevatedButton(
           //     onPressed: () => {
@@ -111,19 +112,19 @@ class _AttendencePageState extends State<AttendencePage> {
   }
 
   buildAttendenceCard(BuildContext context, int index) {
-    var index2 = index+1;
-    
+    var index2 = index + 1;
+
     return FocusedMenuHolder(
       menuWidth: MediaQuery.of(context).size.width * 0.75,
       duration: Duration(milliseconds: 350),
       animateMenuItems: true,
       onPressed: () {
-        setState(() {   
-        ChangeState(isSelectedList, index, 1);
-        ChangeColor(isSelectedList, index);
+        setState(() {
+          ChangeState(isSelectedList, index, 1);
+          ChangeColor(isSelectedList, index);
         });
         // Navigator.of(this.context).push(
-          // MaterialPageRoute(builder: (context) => ProfilePage()),
+        // MaterialPageRoute(builder: (context) => ProfilePage()),
         // );
       },
       menuItems: <FocusedMenuItem>[
@@ -137,9 +138,8 @@ class _AttendencePageState extends State<AttendencePage> {
             ),
             onPressed: () {
               setState(() {
-                
-              ChangeState(isSelectedList, index, 1);
-              ChangeColor(isSelectedList, index);
+                ChangeState(isSelectedList, index, 1);
+                ChangeColor(isSelectedList, index);
               });
               // Navigator.of(this.context).push(
               //   MaterialPageRoute(builder: (context) => ProfilePage()),
@@ -157,9 +157,8 @@ class _AttendencePageState extends State<AttendencePage> {
             ),
             onPressed: () {
               setState(() {
-                
-              ChangeState(isSelectedList, index, 0);
-              ChangeColor(isSelectedList, index);
+                ChangeState(isSelectedList, index, 0);
+                ChangeColor(isSelectedList, index);
               });
               // Navigator.of(this.context).push(
               //   MaterialPageRoute(builder: (context) => EditProfilePage()),
@@ -176,9 +175,8 @@ class _AttendencePageState extends State<AttendencePage> {
             ),
             onPressed: () {
               setState(() {
-                
-            ChangeState(isSelectedList, index, 2);
-              ChangeColor(isSelectedList, index);
+                ChangeState(isSelectedList, index, 2);
+                ChangeColor(isSelectedList, index);
               });
               // Navigator.of(this.context).push(
               //   MaterialPageRoute(builder: (context) => ChangePassword()),
@@ -203,7 +201,7 @@ class _AttendencePageState extends State<AttendencePage> {
                   width: 25,
                 ),
                 Text(
-                  studentvar[index].studentName,
+                  mealvar.mealAvailable[index],
                   style: TextStyle(fontSize: 20),
                 ),
               ],
@@ -213,30 +211,29 @@ class _AttendencePageState extends State<AttendencePage> {
       ),
     );
   }
-void ChangeState(List<int> isSelectedList, int value, int i) {
-  isSelectedList[value] = i;
 
-}
-void ResetState() {
-  for(int state =0 ; state < attendencecolor.length ; state++){
-    attendencecolor[state] = Colors.white;
+  void ChangeState(List<int> isSelectedList, int value, int i) {
+    isSelectedList[value] = i;
   }
 
-}
+  void ResetState() {
+    for (int state = 0; state < attendencecolor.length; state++) {
+      attendencecolor[state] = Colors.white;
+    }
+  }
 
-void ChangeColor(List<int> isSelectedList, int index) {
-  if (isSelectedList[index] == 1) {
-    attendencecolor[index] = green ;
-    // print("changed to : "+ isSelectedList.toString());
-  } else {
-    if (isSelectedList[index] == 2) {
-      attendencecolor[index] = yellow;
-    // print("changed to : "+ isSelectedList.toString());
+  void ChangeColor(List<int> isSelectedList, int index) {
+    if (isSelectedList[index] == 1) {
+      attendencecolor[index] = green;
+      // print("changed to : "+ isSelectedList.toString());
     } else {
-      attendencecolor[index] = red;
-    // print("changed to : "+ isSelectedList.toString());
+      if (isSelectedList[index] == 2) {
+        attendencecolor[index] = yellow;
+        // print("changed to : "+ isSelectedList.toString());
+      } else {
+        attendencecolor[index] = red;
+        // print("changed to : "+ isSelectedList.toString());
+      }
     }
   }
 }
-}
-

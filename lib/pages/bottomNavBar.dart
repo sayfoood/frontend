@@ -118,7 +118,7 @@ BottomNavigationBar BuildAdminBottomNavBar(int currentindex) {
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.badge),
-        label: 'Faculty',
+        label: 'Student',
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.logout),
@@ -160,7 +160,7 @@ int currentadmin = 0;
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.badge),
-        label: 'Faculty',
+        label: 'Student',
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.logout),

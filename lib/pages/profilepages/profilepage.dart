@@ -23,11 +23,11 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     int currentindex = 0;
     getGroup(context);
-    final user = UserPrefrences.myUser;
+    final user = UserPrefrences.student;
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Faculty Profile"),
+        title: Text("Student Profile"),
         centerTitle: true,
       ),
       body: Padding(
@@ -36,13 +36,14 @@ class _ProfilePageState extends State<ProfilePage> {
           physics: BouncingScrollPhysics(),
           children: [
             Center(
-              child: Image.asset('assets/Logo_Login_Page.png'),
+              child: Image.asset('assets/LogoLoginPage.png'),
             ),
             const SizedBox(
               height: 20,
             ),
             ProfileWidget(
-              imagePath: user.imagePath,
+              // imagePath: Image.asset('assets/Profile_Photo.png'),
+              imagePath: 'https://i.ytimg.com/vi/SlkTWNBu09E/maxresdefault.jpg',
               size: 224,
             ),
             const SizedBox(
@@ -98,24 +99,24 @@ class _ProfilePageState extends State<ProfilePage> {
   void getGroup(BuildContext context) {}
 }
 
-Widget buildName(Faculty user) => Column(
+Widget buildName(Student user) => Column(
       children: [
         Text(
-          user.facultyName,
+          user.studentName,
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24.0),
         ),
         const SizedBox(
           height: 4,
         ),
         Text(
-          user.email,
+          user.studentemail,
           style: TextStyle(
             color: Colors.grey,
           ),
         )
       ],
     );
-Widget buildEditButton(Faculty user, BuildContext context) => ButtonWidget(
+Widget buildEditButton(Student user, BuildContext context) => ButtonWidget(
       text: 'Edit Profile',
       icon: Icons.person,
       onClicked: () => {
@@ -124,7 +125,7 @@ Widget buildEditButton(Faculty user, BuildContext context) => ButtonWidget(
         )
       },
     );
-Widget buildChangePassButton(Faculty user, BuildContext context) => ButtonWidget(
+Widget buildChangePassButton(Student user, BuildContext context) => ButtonWidget(
       text: 'Change Password',
       icon: Icons.lock,
       onClicked: () => {
@@ -133,7 +134,7 @@ Widget buildChangePassButton(Faculty user, BuildContext context) => ButtonWidget
         )
       },
     );
-Widget buildSwitchToAdminButton(Faculty user, BuildContext context) =>
+Widget buildSwitchToAdminButton(Student user, BuildContext context) =>
     ButtonWidget(
       text: 'Switch to Admin',
       icon: Icons.switch_account,
