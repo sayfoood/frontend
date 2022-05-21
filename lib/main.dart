@@ -37,6 +37,7 @@ class myApp extends StatelessWidget {
         dividerColor: Colors.black);
     // DE0000
     return MaterialApp(
+      
       debugShowCheckedModeBanner: false,
       title: 'Attendence Management System',
       theme: themeData,

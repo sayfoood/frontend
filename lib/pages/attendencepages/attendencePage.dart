@@ -60,6 +60,7 @@ class _AttendencePageState extends State<AttendencePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         leading: BackButton(),
         title: Text("Attendence"),
@@ -87,6 +88,7 @@ class _AttendencePageState extends State<AttendencePage> {
             // color: Colors.orange,
             child: new ListView.builder(
                 // itemCount: mealvar.mealAvailable.length,
+                itemCount: 5,
                 itemBuilder: (BuildContext context, int index) =>
                     buildAttendenceCard(context, index)),
             // ListTile(
@@ -126,24 +128,24 @@ class _AttendencePageState extends State<AttendencePage> {
             child: const Text('Submit'),
             style: ElevatedButton.styleFrom(fixedSize: Size(300, 40)),
           ),
-          // ElevatedButton(
-          //     onPressed: () => {
-          //       AlertDialog(
-          //         title: Text("Submit Attendence?"),
-          //         actions: [
+          ElevatedButton(
+              onPressed: () => {
+                AlertDialog(
+                  title: Text("Order food"),
+                  actions: [
 
-          //         ],
-          //       )
-          //     },
-          //     child: Text(
-          //       "Submit",
-          //       style: TextStyle(fontSize: 15),
-          //     ),
-          // style: ElevatedButton.styleFrom(
-          //   shape: new RoundedRectangleBorder(
-          //       borderRadius: new BorderRadius.circular(10.0)),
-          //   fixedSize: Size(400, 60),
-          // )),
+                  ],
+                )
+              },
+              child: Text(
+                "Submit",
+                style: TextStyle(fontSize: 15),
+              ),
+          style: ElevatedButton.styleFrom(
+            shape: new RoundedRectangleBorder(
+                borderRadius: new BorderRadius.circular(10.0)),
+            fixedSize: Size(400, 60),
+          )),
         ],
       ),
     );
@@ -250,8 +252,14 @@ class _AttendencePageState extends State<AttendencePage> {
                 future: futureMenu,
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
-                    if (index < 18)
-                      return Text(snapshot.data!.data[index].toString());
+                    var data = snapshot.data!.data[index].toString().split(",");
+                    var food= data[0];
+                    food = food.substring(1);
+                    var price = data[1];
+                    price = price.substring(0,price.length - 1);
+                    return Text(food,
+                    textAlign: TextAlign.left,
+                    );
                   } else if (snapshot.hasError) {
                     return Text("${snapshot.error}");
                   }
