@@ -65,88 +65,90 @@ class _AttendencePageState extends State<AttendencePage> {
         leading: BackButton(),
         title: Text("Attendence"),
       ),
-      body: Column(
-        children: [
-          SizedBox(
-            height: 15.0,
-          ),
-          Center(
-            child: Text(
-              "Select the items you're interested to take today",
-              style: TextStyle(
-                  fontSize: 15,
-                  color: Colors.grey,
-                  fontWeight: FontWeight.w600),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 15.0,
             ),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Container(
-            height: 550,
-            width: 400,
-            // color: Colors.orange,
-            child: new ListView.builder(
-                // itemCount: mealvar.mealAvailable.length,
-                itemCount: 5,
-                itemBuilder: (BuildContext context, int index) =>
-                    buildAttendenceCard(context, index)),
-            // ListTile(
-
-            // )),
-          ),
-          SizedBox(
-            height: 25,
-          ),
-          //
-          //
-          //
-          ElevatedButton(
-            onPressed: () => showDialog<String>(
-              context: context,
-              builder: (BuildContext context) => AlertDialog(
-                title: const Text('Submit Attendence?'),
-                // content: const Text('AlertDialog description'),
-                actions: <Widget>[
-                  TextButton(
-                    onPressed: () => Navigator.pop(context, 'Cancel'),
-                    child: const Text('Cancel'),
-                  ),
-                  TextButton(
-                    onPressed: () => {
-                      ResetState(),
-                      Navigator.of(context).pushAndRemoveUntil(
-                          MaterialPageRoute(
-                              builder: (context) => LoginNavScreen()),
-                          (route) => false)
-                    },
-                    child: const Text('Submit'),
-                  ),
-                ],
-              ),
-            ),
-            child: const Text('Submit'),
-            style: ElevatedButton.styleFrom(fixedSize: Size(300, 40)),
-          ),
-          ElevatedButton(
-              onPressed: () => {
-                AlertDialog(
-                  title: Text("Order food"),
-                  actions: [
-
-                  ],
-                )
-              },
+            Center(
               child: Text(
-                "Submit",
-                style: TextStyle(fontSize: 15),
+                "Select the items you're interested to take today",
+                style: TextStyle(
+                    fontSize: 15,
+                    color: Colors.grey,
+                    fontWeight: FontWeight.w600),
               ),
-          style: ElevatedButton.styleFrom(
-            shape: new RoundedRectangleBorder(
-                borderRadius: new BorderRadius.circular(10.0)),
-            fixedSize: Size(400, 60),
-          )),
-        ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              height: 550,
+              width: 400,
+              // color: Colors.orange,
+              child: new ListView.builder(
+                  // itemCount: mealvar.mealAvailable.length,
+                  itemCount: 5,
+                  itemBuilder: (BuildContext context, int index) =>
+                      buildAttendenceCard(context, index)),
+              // ListTile(
+
+              // )),
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            //
+            //
+            //
+            ElevatedButton(
+              onPressed: () => showDialog<String>(
+                context: context,
+                builder: (BuildContext context) => AlertDialog(
+                  title: const Text('Submit Attendence?'),
+                  // content: const Text('AlertDialog description'),
+                  actions: <Widget>[
+                    TextButton(
+                      onPressed: () => Navigator.pop(context, 'Cancel'),
+                      child: const Text('Cancel'),
+                    ),
+                    TextButton(
+                      onPressed: () => {
+                        ResetState(),
+                        Navigator.of(context).pushAndRemoveUntil(
+                            MaterialPageRoute(
+                                builder: (context) => LoginNavScreen()),
+                            (route) => false)
+                      },
+                       child: const Text('Submit'),
+                    ), 
+                  ],
+                ),
+              ),
+              child: const Text('Submit'),
+              style: ElevatedButton.styleFrom(fixedSize: Size(300, 40)),
+            ),
+            // ElevatedButton(
+            //     onPressed: () => {
+            //       AlertDialog(
+            //         title: Text("Order food"),
+            //         actions: [
+
+            //         ],
+            //       )
+            //     },
+            //     child: Text(
+            //       "Submit",
+            //       style: TextStyle(fontSize: 15),
+            //     ),
+            // style: ElevatedButton.styleFrom(
+            //   shape: new RoundedRectangleBorder(
+            //       borderRadius: new BorderRadius.circular(10.0)),
+            //   fixedSize: Size(400, 60),
+            // )),
+          ],
+        ),
       ),
     );
   }
